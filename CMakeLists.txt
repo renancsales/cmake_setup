@@ -29,6 +29,8 @@ project(project_setup)
 
 # add raylib
 add_subdirectory(externals/raylib)
+add_subdirectory(externals/imgui-docking)
+add_subdirectory(externals/rlimgui)
 
 # define MY_SOURCES to be a list if all source files for my project
 file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
@@ -67,7 +69,7 @@ endif ()
 target_include_directories(project_setup PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/src/")
 
 # Link raylib library statically
-target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE raylib_static)
+target_link_libraries("${CMAKE_PROJECT_NAME}" PRIVATE raylib_static imgui rlimgui)
 
 #target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC RESOURCES_PATH="${CMAKE_CURRENT_SOURCE_DIR}/")
 
