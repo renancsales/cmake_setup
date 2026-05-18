@@ -5,3 +5,4 @@ bin/
 .vs/
 .idea/
 CMakeSetting.json
+.DS_Store
