@@ -11,7 +11,7 @@ if(MSVC)
 else()
     if(APPLE)
         #add_link_options(-static-libstdc++ -static-libgcc)
-        add_compile_options(-mcpu=apple-m1 -mfma) # SIMD optimizations
+        add_compile_options(-mcpu=apple-m1) # SIMD optimizations
     else ()
         add_link_options(-static-libstdc++ -static-libgcc)
         add_compile_options(-mavx2 -mfma) # SIMD optimizations
